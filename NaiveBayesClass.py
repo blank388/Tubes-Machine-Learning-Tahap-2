@@ -27,9 +27,18 @@ class NBClassifier :
             self.priors[i] = X_i.shape[0] / float(jmlDataFitur)
 
     def prediksi(self, dataTest):
+        #revisi
+        target_pred = []
         for i in dataTest:
-            target_pred = [self.predict(i)]
+            target_pred.append(self.predict(i))
         return target_pred
+
+        #sebelumnya
+        # target_pred = []
+        # for i in dataTest:
+        #     target_pred = self.predict(i)
+        # return target_pred
+        
     def predict(self, sample):
         #P(y|X) = P(X|y) * P(y)
         #P(y|X) atau posterior
